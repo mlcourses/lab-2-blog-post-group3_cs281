@@ -73,6 +73,15 @@ Before moving forward, consult this function table:
 
 <img src="https://github.com/mlcourses/lab-2-blog-post-group3_cs281/blob/main/assets/Function%20table.png" alt="alt text" width="550"/> 
 
+From the function table, we notice that:
+- In order for the mux to actually output from what is input from the data lines, we need to set the strobe to low. As such, connect the strobe - gate 9 to GND.
+- For the other two select lines D and C, even if we are not using them, the mux would not know if we are using them or not. Because of that and the fact that we want to output from data lines E0 to E3, we need to set the two select lines D and C to low. As such, connect gates 11 and 13 to GND.
+- The output from the mux is inverted.
+- To easier understand how the select lines are working, you can understand as if we are using the select lines to type out the binary for the number of the data line that we want the output to be from. For example, if A is Low (L) and B is High (H) or in the order of the function table, H - L, it will output from data line E2. 2 in binary is 10, and as such, High - Low.
+
+The final result should look something like this:
+
+
 
 
 
