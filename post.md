@@ -39,6 +39,20 @@ Using the following circuit diagram:
 
 <img src="https://github.com/mlcourses/lab-2-blog-post-group3_cs281/blob/main/assets/2%20to%201%20mux%20circuit.png" alt="alt text" width="550"/> 
 
+We will build a 2 to 1 mux with just AND, OR, and NOT gates. As such, like our diagram, we will use two 7408 chips for the two AND gates, one 7404 inverter for the one NOT gate, and one 7432 chip for the one OR gate. For our inputs, we will use switch s5 for input line A and switch s6 for input line B. For the select line, we will use switch s1. The output will be connected to the logic probe (the LED light on the right of the breadboard).
+
+And now we are ready to build our 2 to 1 mux:
+- Put the chips accordingly like the circuit on the breadboard.
+- Wire and ground the chips. Similar to the 7404 and 7408 chips we used in the previous lab, for the 7432 chip, the right hand corner is to be connected to Vcc or +5V and the lower left corner is to be connected to GND.
+- The 7432 chip’s gates will also operate similarly to the 7408 chip, which means it has two inputs and onw output. The two inputs of this chip (gate 1A and gate 1B) will be connected to the output (gate 1Y) of the two 7408 chips. The output of the current pair of the 7432 chip (gate 1Y) will be connected to the logic probe.
+- The first 7408 chip will be used to take in inputs from input line A and the output from the inverter. As such, gate 1A of the chip will be connected to switch s5 and gate 1B of the chip will be connected to the output of the 7404 inverter (gate 1Y). And as mentioned above, the output of this chip (gate 1Y) will be connected to the 7432 chip input gate 1A.
+- The second 7408 chip will be used to take in inputs from input line B and the direct input from the selector. As such, gate 1A of the chip will be connected to switch s6 and gate 1B of the chip will be connected to switch s1. And as mentioned above, the output of this chip (gate 1Y) will be connected to the 7432 chip input gate 1B.
+- For the 7404 inverter i.e. the NOT gate, pin 1 for the input gate 1A will be connected to switch s1, and once again as mentioned above, the output (gate 1Y) will be connected to the second input gate (gate 1B) of the first 7408 chip that is also taking input from input line A.
+
+The final result should look something like this:
+
+
+
 
 
 
