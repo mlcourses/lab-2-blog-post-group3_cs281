@@ -81,6 +81,7 @@ From the function table, we notice that:
 
 The final result should look something like this:
 
+<img src="https://github.com/mlcourses/lab-2-blog-post-group3_cs281/blob/main/assets/4%20to%201.png" alt="alt text" width="550"/> 
 
 
 
