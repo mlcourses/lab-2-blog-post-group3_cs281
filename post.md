@@ -37,7 +37,7 @@ In this project, we will follow four main steps. Initially, we will set up the b
 
 Using the following circuit diagram: 
 
-<img src="https://github.com/mlcourses/lab-2-blog-post-group3_cs281/blob/main/assets/2%20to%201%20mux%20circuit.png" alt="alt text" width="450"/> 
+<img src="https://github.com/mlcourses/lab-2-blog-post-group3_cs281/blob/main/assets/2%20to%201%20mux%20circuit.png" alt="alt text" width="550"/> 
 
 
 
