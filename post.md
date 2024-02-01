@@ -105,6 +105,103 @@ The final result should look something like this:
 
 <img src="https://github.com/mlcourses/lab-2-blog-post-group3_cs281/blob/main/assets/4%20to%201%20mux%20with%20Arduino.png" alt="alt text" width="450"/> 
 
+Write the following code: 
+
+```c
+const int S0[] = {0,0,1,1,0,0,1,1};
+const int S1[] = {0,0,0,0,1,1,1,1};
+const int A[] = {0,1,0,0,0,0,0,0};
+const int B[] = {0,0,0,1,0,0,0,0};
+const int C[] = {0,0,0,0,0,1,0,0};
+const int D[] = {0,0,0,0,0,0,0,1};
+// const int Y[] = {0,1,0,1,0,1,0,1};
+// You are probably using a 74150, so the outputs are reversed.
+// Use this Y instead:
+const int Y[] = {1,0,1,0,1,0,1,0};
+const int WAIT0 = 300;
+const int WAIT1 = 2000;
+int index = 0;
+int x;  // for reading input
+void setup() {
+  // Serial Port setup for communication back to computer
+  Serial.begin(9600);
+  // data pins are outputs (for Arduino)
+  pinMode(10,OUTPUT); // A
+  pinMode(11,OUTPUT); // B
+  pinMode(12,OUTPUT); // C
+  pinMode(13,OUTPUT); // D
+  // select pins are outputs (for Arduino)
+  pinMode(8,OUTPUT);  // S0
+
+pinMode(9,OUTPUT);  // S1
+  // Mux output is input for Arduino
+  pinMode(7,INPUT);
+}
+void loop() {
+  // write data inputs to MUX
+  digitalWrite(10,A[index]);
+  digitalWrite(11,B[index]);
+  digitalWrite(12,C[index]);
+  digitalWrite(13,D[index]);
+  // write select line inputs to MUX
+  digitalWrite(8,S0[index]);
+  digitalWrite(9,S1[index]);
+  delay(WAIT0);   // give time for logic signal to propagate
+  // read the MUX output
+  x = digitalRead(7);
+  // display the results
+  Serial.print(index);
+  Serial.print(" x:");
+  Serial.print(x,BIN);
+  Serial.print(", y:");
+  Serial.print(Y[index],BIN);
+  Serial.print("\t ");
+  if ( x == Y[index] )
+  {
+    Serial.print(": OK\n");
+  }
+else {
+    Serial.print(": BAD\n");
+  }
+  delay(WAIT1);
+  index = (index+1) % 8;  // increment index
+}
+```
+In the above code:
+- The `const` arrays define inputs and selections for a 4-to-1 multiplexer experiment.
+- `S0` and `S1` represent the selector inputs, deciding which data input (`A`, `B`, `C`, `D`) to pass through.
+- `A`, `B`, `C`, `D` are data inputs, with each array representing one possible input state across different tests.
+- `Y` shows the expected output for each combination of selector and data inputs, tailored for a 74150 mux chip where outputs are inverted.
+- The values at corresponding indices across `S0`, `S1`, `A`, `B`, `C`, `D`, and `Y` together form a test case, demonstrating the mux's behavior under various input conditions.
+
+
+As you write your code, remember to **choose the invert output Y** list as our outputs are reversed by using a 74150 mux (as noticed from the function table).
+
+Run the program. You will have to open the “Serial Monitor” window in the Arduino IDE. This is the magnifying-glass like icon in the upper right corner of the IDE. You should see the results of your tests scroll across this window.
+
+### Step 4 - Building the adder circuit using AND, OR, and XOR gates
+
+Using the following circuit diagram: 
+
+<img src="https://github.com/mlcourses/lab-2-blog-post-group3_cs281/blob/main/assets/Adder%20circuit.png" alt="alt text" width="550"/> 
+
+We will build the adder circuit with AND, OR, and XOR gates. As such, like our diagram, we will use two 7408 chips for the two AND gates, two 7486 chips for the two XOR gates, and one 7432 chip for the one OR gate. For our inputs, we will use switch `s1` for input A and switch `s2` for input B, and switch `s3` for `Cin`. The output will be connected to the logic probes (the LED light on the right of the breadboard).
+
+And now we are ready to build our adder circuit:
+- Put the chips accordingly like the circuit on the breadboard.
+- Wire and ground the chips. Similar to the chips we used in the previous steps, for the  7486 chip, the right hand corner is to be connected to Vcc or +5V and the lower left corner is to be connected to GND
+- Wire the switches s1 and s2 to the first pair of input of the first 7486 chip. The output of this chip will be connected to the first input of the second 7486 chip and the input of the bottom 7408 chip.
+- Switches `s1` and `s2` will also be connected to the first pair of input of the top 7408 chip. The output of this 7408 chip will be connected to the first input of the 7432 chip.
+- Connect switch `s3` to the second input of the second 7486 chip. This will be in the same pair of inputs with the output from the first 7486 chip. The output of the second 7486 chip will be connected to the 1st logic probe.
+- Switch `s3` will also be connected to the second input of the bottom 7408 chip. This will be in the same pair of inputs with the output from the first 7486 chip. The output of this 7408 chip will be connected to the second input of the 7432 chip.
+- The output of the 7432 chip will be connected to a logic probe.
+
+The final result should look something like this:
+
+
+
+
+
 
 
 
