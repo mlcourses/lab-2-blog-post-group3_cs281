@@ -94,8 +94,8 @@ On the Arduino, connect the following pins accordingly to the mux:
 - Pin 11 on the Arduino for data input B - data line `E1` on the mux
 - Pin 12 on the Arduino for data input C - data line `E2` on the mux
 - Pin 13 on the Arduino for data input D - data line `E3` on the mux
-- Pin 8 on the Arduino for select line 0 - select line A on the mux
-- Pin 9 on the Arduino for select line 1 - select line B on the mux
+- Pin 8 on the Arduino for select line 0 - select line `A` on the mux
+- Pin 9 on the Arduino for select line 1 - select line `B` on the mux
 - Pin 7 on the Arduino for output - output `w` on the mux
 - GND on the Arduino (adjacent to pin 13) to GND on the breadboard
 
@@ -208,11 +208,11 @@ The final result should look something like this:
 
     In boolean algebra it will be: `A¬S + BS`.
 
-    [Testing our 2-1 mux](https://drive.google.com/drive/u/3/shared-with-me)
+    [Testing our 2-1 mux](https://drive.google.com/file/d/1MBfiIWlyjF5bxTkZWnT7CRGPzY81Od0h/view?usp=sharing)
 
 - **For the second step:** After following the instructions for designing a 4 to 1 mux using a 16 to 1 mux, we found out that the output we got, matched the truth table from step 2. For 4-1 mux, we have two selectors, and when the two selectors (`s1`,`s2` in the breadboard) are low, we are taking the input of E0 but inverting it (when `E0` is low, it will output high, and vice versa). When `s1` and `s2` are both high, the output is the invert of `E3`. When `s1` is low and `s2` is high, the output is the invert of `E1`. Lastly, when `s1` is high and `s2` is low, the output is the invert of `E2`. You can see all of these cases by clicking on the following link that will open our detailed video.
 
-    [Testing our 4-1 mux](https://drive.google.com/drive/u/3/shared-with-me)
+    [Testing our 4-1 mux](https://drive.google.com/file/d/1jmLiCxDXu9AMI3JJvbnmbXPTcvKItoSB/view?usp=sharing)
 
 - **For the third step:** After following the instructions for using Arduino with the 4-1 mux, we verified the correctness of the 4-1 mux and out circuit. We got a proof for this correctness from our code as you can see in the following image:
 
@@ -227,11 +227,11 @@ The final result should look something like this:
 
     The gate that connects between these two expressions is OR.  Our result was according to these two boolean expressions. Whenever ONE of our inputs A, B or `Cin` (`s1`, `s2`, and `s3` accordingly) is high, the first boolean expression is correct and as a result the output on the breadboard is correctly high. When `s1` and `s2` are both high, the second expression is essentially correct and as a result the output in our breadboard was correctly high. Lastly, when `s3` (`Cin`) is true, and ONE of `s1` or `s2` are true, the second expression is essentially correct and the output on our breadboard was correctly high. In other cases where 0 or more than 1 input out of A,B, `Cin` were on, and either A\B and `Cin` were off, the output on our breadboard was low. This is exactly what we wanted to see as these boolean expressions representing the adder circuit and our result on the breadboard followed that pattern. Click on the following link to watch the video to see the correct result we got!
 
-    [Testing our Adder](https://drive.google.com/drive/u/3/shared-with-me)
+    [Testing our Adder](https://drive.google.com/file/d/1D4i9kRoaQVimo-0cT8rwiURQVD0VYMzu/view?usp=sharing)
 
 ## Conclusion
 
-
+In this lab, we went through the basics of digital logic, building and testing multiplexers and adders. We started with simple 2-to-1 multiplexers and then moved to more complex 4-to-1 versions. We applied what we learned to real-life situations. The highlight was making a 1-bit adder, turning the ideas of Boolean algebra into something we could see and touch. This lab made us better understand digital logic and showed us how theory and practice can work together. Moving forward, the skills and knowledge we gained will help us tackle more complex topics in computing and electronics.
 
 
 
