@@ -52,6 +52,8 @@ And now we are ready to build our 2 to 1 mux:
 The final result should look something like this:
 
 
+<img src="https://github.com/mlcourses/lab-2-blog-post-group3_cs281/blob/main/assets/2%20to%201.png" alt="alt text" width="450"/> 
+
 
 
 
