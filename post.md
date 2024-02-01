@@ -71,7 +71,7 @@ Now we are ready to design our 4 to 1 mux:
 
 Before moving forward, consult this function table:
 
-
+<img src="https://github.com/mlcourses/lab-2-blog-post-group3_cs281/blob/main/assets/Function%20table.png" alt="alt text" width="550"/> 
 
 
 
