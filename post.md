@@ -54,6 +54,11 @@ The final result should look something like this:
 
 <img src="https://github.com/mlcourses/lab-2-blog-post-group3_cs281/blob/main/assets/2%20to%201.png" alt="alt text" width="450"/> 
 
+### Step 2 - Designing a 4 to 1 mux using a 16 to 1 mux
+
+Using the following 74150 mux i.e. a 16 to 1 mux:
+
+
 
 
 
