@@ -58,6 +58,7 @@ The final result should look something like this:
 
 Using the following 74150 mux i.e. a 16 to 1 mux:
 
+<img src="https://github.com/mlcourses/lab-2-blog-post-group3_cs281/blob/main/assets/16%20to%201%20diagram.png" alt="alt text" width="550"/> 
 
 
 
