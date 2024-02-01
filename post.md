@@ -81,7 +81,28 @@ From the function table, we notice that:
 
 The final result should look something like this:
 
-<img src="https://github.com/mlcourses/lab-2-blog-post-group3_cs281/blob/main/assets/4%20to%201.png" alt="alt text" width="550"/> 
+<img src="https://github.com/mlcourses/lab-2-blog-post-group3_cs281/blob/main/assets/4%20to%201.png" alt="alt text" width="450"/> 
+
+### Step 3 - Designing a 4 to 1 mux with Arduino
+
+After you are done with the previous step, disconnect the wires to the 4 data lines, the 2 selectors (A and B only), and the output on the mux.
+
+We will use the Arduino to test the operation of the mux. The Arduino will drive the inputs (data and control lines) for the mux, read the output of the mux, and run through a series of tests to verify the correct operation of the mux (and your circuit).
+
+On the Arduino, connect the following pins accordingly to the mux:
+- Pin 10 on the Arduino for data input A - data line E0 on the mux
+- Pin 11 on the Arduino for data input B - data line E1 on the mux
+- Pin 12 on the Arduino for data input C - data line E2 on the mux
+- Pin 13 on the Arduino for data input D - data line E3 on the mux
+- Pin 8 on the Arduino for select line 0 - select line A on the mux
+- Pin 9 on the Arduino for select line 1 - select line B on the mux
+- Pin 7 on the Arduino for output - output w on the mux
+- GND on the Arduino (adjacent to pin 13) to GND on the breadboard
+
+**Caution:** You will connect the GND pin on the data side, not on the power side of the Arduino to ground on the breadboard.
+
+The final result should look something like this:
+
 
 
 
