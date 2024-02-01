@@ -103,8 +103,7 @@ On the Arduino, connect the following pins accordingly to the mux:
 
 The final result should look something like this:
 
-
-
+<img src="https://github.com/mlcourses/lab-2-blog-post-group3_cs281/blob/main/assets/4%20to%201%20mux%20with%20Arduino.png" alt="alt text" width="450"/> 
 
 
 
