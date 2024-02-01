@@ -60,6 +60,19 @@ Using the following 74150 mux i.e. a 16 to 1 mux:
 
 <img src="https://github.com/mlcourses/lab-2-blog-post-group3_cs281/blob/main/assets/16%20to%201%20diagram.png" alt="alt text" width="550"/> 
 
+We will design a 4 to 1 mux. We will use the lowest four data lines: E0, E1, E2, and E3. Accordingly, we will use switches s8, s7, s6, and s5 for the data lines. For our two select lines, A and B, we will connect them to switches s1 and s2. Once again, the output will be connected to the logic probe.
+
+Now we are ready to design our 4 to 1 mux:
+- Put the mux vertically on the breadboard.
+- Wire and ground the chip. Similar to the chips we used in the previous step, the right hand corner (gate 24) is to be connected to Vcc or +5V and the lower left corner (gate 12) is to be connected to GND.
+- Connect gates 5, 6, 7, and 8 to switches s8, s7, s6, and s5 accordingly. These will be our four data lines.
+- Connect gates 15, and 14 to switches s1, and s2 accordingly. These will be our two select lines.
+- Connect gate 10 to the logic probe. This will be our output.
+
+Before moving forward, consult this function table:
+
+
+
 
 
 
